@@ -15,6 +15,14 @@ const create = (req, res) => {
   }
 }
 
+const getFriendship = (req, res) => {
+  const { cpf } = req.params
+  const person = personList.find(p => p.cpf == cpf)
+  person.friends = person.getFriendsList()
+  res.send(person)
+}
+
 export {
-  create
+  create,
+  getFriendship
 }

@@ -16,7 +16,6 @@ const create = (req, res) => {
 }
 
 const list = (req, res) => {
-  personList.map(p => console.log(p.name, p.cpf))
   res.json(personList)
 }
 
@@ -29,6 +28,8 @@ const show = (req, res) => {
     res.status(404).send(`No user found with given CPF number`)
   }
 }
+
+
 
 export {
   create,

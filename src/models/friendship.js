@@ -18,7 +18,6 @@ export class Friendship {
   }
   
   alreadExists() {
-    console.log(`alread exists - ${friendshipRelationships.some(p => p.cpf1 === this.cpf1 && p.cpf2 === this.cpf2)}`)
     return friendshipRelationships.some(p => p.cpf1 === this.cpf1 && p.cpf2 === this.cpf2)
   }
 

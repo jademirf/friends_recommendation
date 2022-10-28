@@ -25,4 +25,16 @@ export class Person {
     personList.push(this)
   }
 
+  getFriendsList() {
+    const friends = []
+    friendshipRelationships.map(v => {
+      if (v.cpf1 === this.cpf) {
+        friends.push(v.cpf2)
+      } else if (v.cpf2 === this.cpf){
+        friends.push(v.cpf1)
+      }
+    })
+    return friends
+  }
+
 }
