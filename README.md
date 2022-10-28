@@ -40,6 +40,6 @@ npm run dev
 | /person               | GET    | Returns a list with everyone on the system |
 | /person/:cpf          | GET    | Returns person's data from a given cpf |
 | /relationship/        | POST   | Creates a new friendship between two informed persons. Expects: `{cpf1: number, cpf2: number}` |
-| /relationship/:cpf    | GET    | Returns the friends list from the given cpf |
+| /relationship/:cpf    | GET    | Returns the friends list from a given cpf |
 | /recommendations/:cpf | GET    | Returns friends suggestion ordered by score |
 | /seed                 | GET    | Fills the memory with fake data to test features |
