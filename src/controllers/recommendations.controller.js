@@ -8,29 +8,36 @@ const list = (req, res) => {
   if (typeof cpf != 'number' || cpf.toString().length != 11 ) {
     res.status(400).send(`CPF must be a number with 11 digits`)
   } else {
+
     const person = personList.find(p => p.cpf === cpf)
+
     if (person) {
+      // take friends list from informed user
       const friends = person.getFriendsList()
-
-      const friendsOfFriends = getSecondLevelFriends(friends)
-
+      // returns all the friends of the friends of the current user that are not friend of current user
+      const friendsOfFriends = getSecondLevelFriends(friends, cpf)
+      // returns the score of every cpf
       const friendsOccurrences = getOccurrenceByCpf(friendsOfFriends)
-
-
-      res.json(friendsOccurrences)
+      // creates an sorted array based on the scores
+      const sortedArray = Object.keys(friendsOccurrences).sort((a, b) => {
+        return friendsOccurrences[b] - friendsOccurrences[a]
+      })
+      res.json(sortedArray)
     } else {
       res.status(404).send(`No user found for given cpf`)
     }
   }
 }
 
-const getSecondLevelFriends = (friendsList) => {
+const getSecondLevelFriends = (friendsList, userCpf) => {
   let secondLevelFriends = []
   friendsList.map(f => {
     let person = personList.find(p => p.cpf === f)
     secondLevelFriends = [ ...secondLevelFriends, ...person.getFriendsList()]
   })
-  console.log('Second level friends', secondLevelFriends)
+  console.log(secondLevelFriends)
+  let friendsToExclude = [...friendsList, userCpf]
+  secondLevelFriends = secondLevelFriends.filter(v => !friendsToExclude.includes(v))
   return secondLevelFriends
 }
 
