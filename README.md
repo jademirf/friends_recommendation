@@ -33,6 +33,7 @@ npm run dev
 
 
 ## API routes
+You can access `/docs` route to see swagger version or check the online version [here](https://friends-recommendation.cyclic.app/docs).
 | Route                 | Methods| Description |
 |-----------------------|:------:|-------------|
 | /clean                | DELETE | Erases all system's data (People and Relationships) |

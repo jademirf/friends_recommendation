@@ -16,7 +16,7 @@ const swaggerOptions = {
       title: "Recommendation API",
       description: `This API allows you to add people, create friendship relationships between added people then recommend new friends based on users friend's relationships. 
       Recommendations are also ordered by scores, the score is calculated based on how many friends of the user have friendship with that person.`,
-      servers: [`http://localhost:${PORT}`]
+      servers: [`http://localhost:${PORT}`, 'https://friends-recommendation.cyclic.app/']
 
     }
   },
