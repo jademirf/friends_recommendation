@@ -1,12 +1,12 @@
 
-import * as FriendshipController from '../controllers/friendship.controller'
+import * as RelationshipController from '../controllers/friendship.controller'
 
-export const FriendshipRoutes = (app) => {
-  app.route('/friendship')
-    .post(FriendshipController.create)
+export const RelationshipRoutes = (app) => {
+  app.route('/relationship')
+    .post(RelationshipController.create)
   
-  app.route('/friendship/:cpf')
-    .get(FriendshipController.getFriendship)
+  app.route('/relationship/:cpf')
+    .get(RelationshipController.getFriendship)
   
 
 }

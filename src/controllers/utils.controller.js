@@ -1,12 +1,6 @@
 import { Friendship } from '../models/friendship'
 import { Person } from '../models/person'
 
-const cleanAll = (req, res) => {
-  global.personList = []
-  global.friendshipRelationships = []
-  res.send(`All data erased`)
-}
-
 const persons = [{
   "name": "Nataline Scutts",
   "cpf": 87494021321
@@ -81,6 +75,13 @@ const relationships = [
     "cpf2": 75340189211
   },
 ]
+
+const cleanAll = (req, res) => {
+  global.personList = []
+  global.friendshipRelationships = []
+  res.send(`All data erased`)
+}
+
 
 const seedAll = (req, res) => {
   persons.map(p => {
