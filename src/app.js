@@ -2,11 +2,13 @@ import express from 'express'
 import routes from './routes'
 
 const app = express()
-const PORT = 3000
+
+// add port from process.env so it can be published to heroku
+const PORT = process.env.PORT || 3000
 
 // global variables definition
 global.personList = []
-global.friendshipRelations = []
+global.friendshipRelationships = []
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))

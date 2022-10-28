@@ -1,8 +1,9 @@
-import { Person } from '../models/person';
+import { Person } from '../models/person'
 
-const create = async (req, res) => {
+const create = (req, res) => {
+  const { name, cpf } = req.body
   try {
-    const newPerson = new Person(req.body)
+    const newPerson = new Person({ name, cpf })
     if (!newPerson.alreadyExists()) {
       newPerson.save()
       res.send(`Person successfully created`)

@@ -8,7 +8,7 @@ export class Person {
       throw new Error('Please inform name and cpf')
     }
     if(typeof cpf != 'number') {
-      throw new Error('CPF must be an number')
+      throw new Error('CPF must be a number')
     }
     if (cpf.toString().length != 11) {
       throw new Error('CPF size must be equals 11')
