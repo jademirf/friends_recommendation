@@ -21,9 +21,12 @@ const list = (req, res) => {
 
 const show = (req, res) => {
   const { cpf } = req.params
-  const person = new Person()
-  console.log(person.find(cpf))
-  res.send('ok')
+  const person = personList.find(p => p.cpf == cpf)
+  if(person) {
+    res.json(person)
+  } else {
+    res.status(404).send(`No user found with given CPF number`)
+  }
 }
 
 export {

@@ -25,7 +25,4 @@ export class Person {
     personList.push(this)
   }
 
-  find() {
-    return personList.find(p => p.cpf == this.cpf)
-  }
 }
