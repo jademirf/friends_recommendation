@@ -35,15 +35,15 @@ const getSecondLevelFriends = (friendsList, userCpf) => {
     let person = personList.find(p => p.cpf === f)
     secondLevelFriends = [ ...secondLevelFriends, ...person.getFriendsList()]
   })
-  console.log(secondLevelFriends)
   let friendsToExclude = [...friendsList, userCpf]
   secondLevelFriends = secondLevelFriends.filter(v => !friendsToExclude.includes(v))
   return secondLevelFriends
 }
 
+// calc how many times a cpf is found
 const getOccurrenceByCpf = (cpfsList) => {
   const count = {}
-  for (const cpf of cpfsList) {
+  for (let cpf of cpfsList) {
     if (count[cpf]) {
       count[cpf] += 1;
     } else {
