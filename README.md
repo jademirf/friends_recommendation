@@ -23,4 +23,5 @@ npm run dev
 ## How to use the API
 To perform API calls you'll need to use a rest client like [postman](https://www.postman.com) or [insomnia](https://insomnia.rest/download)
 
-### Create a person
+### Person routes
+- http://localhost:3000/person
